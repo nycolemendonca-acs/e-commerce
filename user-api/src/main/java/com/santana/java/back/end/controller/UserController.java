@@ -1,20 +1,58 @@
+// Chama a camada de serviço do user
+
 package com.santana.java.back.end.controller;
 
 import com.santana.java.back.end.dto.UserDTO;
+import com.santana.java.back.end.model.User;
+import com.santana.java.back.end.service.UserService;
+// import com.santana.java.back.end.exception.UserNotFoundException;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.config.RuntimeBeanReference;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/user") // route
+@RequiredArgsConstructor
 
 public class UserController {
+
+    private final UserService userService;
+
+    // Retorna todos os users
+    @GetMapping
+    public List<UserDTO> getUser() { return userService.getAll(); }
+
+    // Retorna um user por ID
+    @GetMapping("/{id}")
+    public  UserDTO findById(@PathVariable Long id) { return userService.findById(id); }
+
+    // Criação de novo user
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserDTO newUser(@RequestBody @Valid UserDTO userDTO) { return userService.save(userDTO); }
+
+    // Retorna um user com base no CPF
+    @GetMapping("/{cpf}/cpf")
+    public UserDTO findByCpf(@PathVariable String cpf) { return userService.findByCpf(cpf); }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) throws UserPrincipalNotFoundException { userService.delete(id); }
+
+    // @RequestParam -> Passa parâmetros na URL para a rota
+    @GetMapping("/search")
+    public List<UserDTO> queryByName(@RequestParam(name="nome", required = true) String nome) { return userService.queryByName(nome); }
+
     public static List<UserDTO> usuarios = new ArrayList<>();
 
     @PostConstruct
@@ -78,6 +116,16 @@ public class UserController {
     @DeleteMapping
     public boolean remover(@PathVariable String cpf) {
         return usuarios.removeIf(userDTO -> userDTO.getCpf().equals(cpf));
+    }
+
+    // Edição de users
+    @PatchMapping("/{id}")
+    public UserDTO editUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
+        return userService.editUser(id, userDTO);
+    }
+
+    public Page<UserDTO> getUsersPage(Pageable pageable) {
+        return userService.getAllPage(pageable);
     }
 }
 

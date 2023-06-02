@@ -3,14 +3,17 @@
 package com.santana.java.back.end.service;
 
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
 
 import com.santana.java.back.end.dto.UserDTO;
 import com.santana.java.back.end.model.User; // Aqui importei o arquivo que contém o método convert()
@@ -35,7 +38,7 @@ public class UserService {
     }
 
     // findById() busca um usuário por um ID específico
-    public UserDTO findById(longer userId) {
+    public UserDTO findById(Long userId) {
         User usuario = userRepository
                         .findById(userId)
                         .orElseThrow(() -> new RuntimeException("Usuário não encontrado."));
@@ -82,8 +85,8 @@ public class UserService {
                 .findById(userId).orElseThrow(() -> new RuntimeException());
 
         if (userDTO.getEmail() != null && !user.getEmail().equals(userDTO.getEmail())) user.setEmail(userDTO.getEmail());
-        if (userDTO.getTelefone() != null && !user.getTelefone().equals(userDTO.getTelefone())).user.setTelefone(userDTO.getTelefone());
-        if (userDTO.getEndereco() != null && !user.getEndereco().equals(userDTO.getEndereco())).user.setEndereco(userDTO.getEndereco());
+        if (userDTO.getTelefone() != null && !user.getTelefone().equals(userDTO.getTelefone())) user.setTelefone(userDTO.getTelefone());
+        if (userDTO.getEndereco() != null && !user.getEndereco().equals(userDTO.getEndereco())) user.setEndereco(userDTO.getEndereco());
 
         user = userRepository.save(user);
         return UserDTO.convert(user);
