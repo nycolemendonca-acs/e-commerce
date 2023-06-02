@@ -2,11 +2,10 @@ package com.santana.java.back.end.controller;
 
 import com.santana.java.back.end.dto.UserDTO;
 import jakarta.annotation.PostConstruct;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -49,11 +48,13 @@ public class UserController {
         usuarios.add(userDTO3);
     }
 
+    // Retorna um objeto com todos os usuários
     @GetMapping
     public List<UserDTO> getUsers() {
         return usuarios;
     }
-    
+
+    // Retorna um usuário utilizando o CPF como filtro
     @GetMapping("/{cpf}")
     public UserDTO getUsersFiltro(@PathVariable String cpf) {
         return usuarios
@@ -61,6 +62,22 @@ public class UserController {
                 .filter(userDTO -> userDTO.getCpf().equals(cpf))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado."));
+    }
+
+    // Adicionar novo usuário
+    // @Valid indica para o Spring que as validações que estão definidas no DTO devem ser realizadas antes da execução do método controlador
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserDTO inserir(@RequestBody @Valid UserDTO userDTO) {
+        userDTO.setDataCadastro(LocalDateTime.now());
+        usuarios.add(userDTO);
+        return userDTO;
+    }
+
+    // Deleta um usuário e tem como parâmetro o CPF
+    @DeleteMapping
+    public boolean remover(@PathVariable String cpf) {
+        return usuarios.removeIf(userDTO -> userDTO.getCpf().equals(cpf));
     }
 }
 
