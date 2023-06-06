@@ -1,11 +1,15 @@
 package com.santana.java.back.end.service;
 
 import com.santana.java.back.end.dto.ShopDTO;
+import com.santana.java.back.end.dto.ShopReportDTO;
 import com.santana.java.back.end.model.Shop;
 import com.santana.java.back.end.repository.ShopRepository;
+import com.santana.java.back.end.repository.ReportRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +19,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ShopService {
     private final ShopRepository shopRepository;
+    private final ProductService productService;
+    private final UserService userService;
 
     public List<ShopDTO> getAll() {
         List<Shop> shops = shopRepository.findAll();
@@ -43,8 +49,8 @@ public class ShopService {
     }
 
     public ShopDTO findById(long ProductId) {
-        Optional<Shop> shop = shopRepository
-                .findById(ProductId);
+        Optional<Shop> shop = shopRepository.findById(ProductId);
+
         if (shop.isPresent()) return ShopDTO.convert(shop.get());
         return null;
     }
@@ -60,4 +66,16 @@ public class ShopService {
         shop = shopRepository.save(shop);
         return ShopDTO.convert(shop);
     }
+
+    public List<ShopDTO> getShopsByFilter(LocalDate startDate, LocalDate endDate, Float minimumValue) {
+        List<Shop> shops = shopRepository.getShopByFilters(startDate, endDate, minimumValue);
+
+        return shops
+                .stream()
+                .map(ShopDTO::convert)
+                .collect(Collectors.toList());
+    }
+
+    public ShopReportDTO getReportByDate(LocalDate startDate, LocalDate endDate) {
+        return shopRepository.getReportByDate(startDate, endDate); }
 }

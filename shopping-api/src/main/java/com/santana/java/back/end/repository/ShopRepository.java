@@ -8,11 +8,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface ShopRepository extends JpaRepository<Shop, Long> {
+public interface ShopRepository extends JpaRepository<Shop, Long>, ReportRepository {
     // Retrieves all purchases for a specific user
-    public List<Shop> findAllByUserIdentifier(String userIdentifier);
+    List<Shop> findAllByUserIdentifier(String userIdentifier);
     // Fetches all purchases that have a total value greater than specified
-    public List<Shop> findAllByTotalGreatherThan(Float total);
+    List<Shop> findAllByTotalGreatherThan(Float total);
     // Returns all purchases from a specific date
-    public List<Shop> findAllByDateGreatherTran(LocalDateTime date);
+    List<Shop> findAllByDateGreatherTran(LocalDateTime date);
 }
