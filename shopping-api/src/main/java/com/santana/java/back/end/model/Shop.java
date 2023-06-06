@@ -1,12 +1,17 @@
 package com.santana.java.back.end.model;
 
 import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import com.santana.java.back.end.dto.ShopDTO;
+
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -34,5 +39,10 @@ public class Shop {
         shop.setUserIdentifier(shopDTO.getUserIdentifier());
         shop.setTotal(shopDTO.getTotal());
         shop.setDate(shopDTO.getDate());
+        shop.setItems(shopDTO.getItems()
+                .stream()
+                .map(Item::convert)
+                .collect(Collectors.toList()));
+        return shop;
     }
 }
