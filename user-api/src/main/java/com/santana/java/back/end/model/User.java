@@ -25,6 +25,7 @@ public class User {
     private String name;
     private String cpf;
     private String address;
+    private String key;
     private String email;
     private String phone_number;
     private LocalDateTime registration_data;
@@ -35,6 +36,7 @@ public class User {
         user.setName(userDTO.getName());
         user.setCpf(userDTO.getCpf());
         user.setAddress(userDTO.getAddress());
+        user.setKey(userDTO.getKey());
         user.setEmail(userDTO.getEmail());
         user.setPhone_number(userDTO.getPhone_number());
         user.setRegistration_data(userDTO.getRegistration_data());

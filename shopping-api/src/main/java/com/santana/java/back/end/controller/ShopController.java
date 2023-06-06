@@ -2,14 +2,15 @@ package com.santana.java.back.end.controller;
 
 import com.santana.java.back.end.dto.ShopDTO;
 import com.santana.java.back.end.dto.ShopReportDTO;
-import com.santana.java.back.end.model.Shop;
 import com.santana.java.back.end.service.ShopService;
-import jakarta.validation.Valid;
+
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -23,35 +24,43 @@ public class ShopController {
 
     @GetMapping("/shopping/shoppingByUser/{userIdentifier}")
     public List<ShopDTO> getShops(@PathVariable String userIdentifier) {
-        return shopService.getByUser(userIdentifier); }
+        return shopService.getByUser(userIdentifier);
+    }
 
     @GetMapping("/shopping/shopByDate")
     public List<ShopDTO> getShops(@RequestBody ShopDTO shopDTO) {
-        return shopService.getByDate(shopDTO); }
+        return shopService.getByDate(shopDTO);
+    }
 
-    @PostMapping("/shopping")
+    @GetMapping("/shopping/{id}")
+    public ShopDTO findById(@PathVariable Long id) { return shopService.findById(id); }
+
+    @PostMapping("/shopping/")
     @ResponseStatus(HttpStatus.CREATED)
-    public ShopDTO newShop(@Valid @RequestBody ShopDTO shopDTO) { return shopService.save(shopDTO); }
+    public ShopDTO newShop(
+            @RequestHeader(name = "key", required = true) String key,
+            @RequestBody ShopDTO shopDTO) {
+
+        return shopService.save(shopDTO, key);
+    }
 
     @GetMapping("/shopping/search")
     public List<ShopDTO> getShopsByFilter(
             @RequestParam(name = "startDate", required = true)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDateTime startDate,
+            @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate startDate,
             @RequestParam(name = "endDate", required = false)
             @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDateTime endDate,
             @RequestParam(name = "minimumValue", required = false) Float minimumValue) {
 
-        return shopService.getShopsByFilter(startDate, endDate, minimumValue);
+        return shopService.getShopsByFilter(startDate, LocalDate.from(endDate), minimumValue);
     }
 
     @GetMapping("/shopping/report")
     public ShopReportDTO getReportByDate(
             @RequestParam(name = "startDate", required = true)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDateTime startDate,
+            @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate startDate,
             @RequestParam(name = "endDate", required = false)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDateTime endDate {
+            @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDateTime endDate) {
 
-                return shopService.getReportByDate(startDate, endDate);
-    }
-    )
+                return shopService.getReportByDate(startDate, LocalDate.from(endDate)); }
 }

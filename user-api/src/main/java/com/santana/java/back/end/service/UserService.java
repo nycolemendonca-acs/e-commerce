@@ -3,10 +3,14 @@ package com.santana.java.back.end.service;
 import com.santana.java.back.end.dto.UserDTO;
 import com.santana.java.back.end.model.User;
 import com.santana.java.back.end.repository.UserRepository;
+
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
 import java.util.List;

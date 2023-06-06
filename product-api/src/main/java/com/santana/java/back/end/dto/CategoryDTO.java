@@ -24,6 +24,7 @@ public class CategoryDTO {
 
         categoryDTO.setId(category.getId());
         categoryDTO.setName(category.getName());
+
         return categoryDTO;
     }
 }

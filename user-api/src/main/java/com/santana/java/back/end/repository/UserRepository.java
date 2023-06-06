@@ -1,6 +1,5 @@
 package com.santana.java.back.end.repository;
 
-import com.santana.java.back.end.dto.UserDTO;
 import com.santana.java.back.end.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

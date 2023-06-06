@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4f55056d-37e2-47c4-86c0-518b712fa017" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/dto/DTOConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/dto/ConvertDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/dto/CategoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/dto/ItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/dto/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/dto/ShopDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/dto/DTOConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/dto/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/dto/CategoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/controller/ShopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/dto/ItemDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/dto/ShopDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/model/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/model/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/repository/ShopRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/com/santana/java/back/end/service/ShopService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/santana/java/back/end/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/santana/java/back/end/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/santana/java/back/end/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/santana/java/back/end/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/santana/java/back/end/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/santana/java/back/end/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/v1__create_user_table.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2QqAPv39rRMTtiielMZqsQsH4dJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Dev2/Documents/e-commerce/user-api"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f55056d-37e2-47c4-86c0-518b712fa017" name="Changes" comment="" />
+      <created>1686070717028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686070717028</updated>
+    </task>
+    <servers />
+  </component>
+</project>

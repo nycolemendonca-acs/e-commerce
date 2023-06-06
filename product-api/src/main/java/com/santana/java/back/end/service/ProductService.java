@@ -48,6 +48,9 @@ public class ProductService {
     }
 
     public ProductDTO save(ProductDTO productDTO) {
+        Boolean existsCategory = categoryRepository.existsById(productDTO.getCategory().getId());
+        if (!existsCategory) throw new CategoryNotFoundException();
+
         Product product = productRepository.save(Product.convert(productDTO));
         return ProductDTO.convert(product);
     }
