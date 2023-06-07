@@ -1,7 +1,5 @@
 package com.santana.java.back.end.model;
 
-import jakarta.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +15,7 @@ import java.util.stream.Collectors;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "shop")
+@Entity(name="shop")
 
 public class Shop {
     @Id

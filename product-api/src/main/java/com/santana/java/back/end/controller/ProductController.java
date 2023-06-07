@@ -19,6 +19,11 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
+    public List<ProductDTO> getProducts() {
+        return productService.getAll();
+    }
+
+    @GetMapping("/category/{categoryId}")
     public List<ProductDTO> getProductByCategory(@PathVariable Long categoryId) {
         return productService.getProductByCategoryId(categoryId);
     }
@@ -34,12 +39,12 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        // return productService.delete(id);
-    }
+    public void delete(@PathVariable Long id) {}
 
     @PostMapping("/{id}")
-    public ProductDTO editProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
+    public ProductDTO editProduct(
+            @PathVariable Long id,
+            @RequestBody ProductDTO productDTO) {
         return productService.editProduct(id, productDTO);
     }
 

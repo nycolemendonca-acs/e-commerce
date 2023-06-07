@@ -9,11 +9,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service // Instance of the class -> Created at application creation
@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
 
-    // calls the findAll method which returns a list of users
     public List<UserDTO> getAll() {
         List<User> users = userRepository.findAll();
         return users
@@ -38,7 +37,10 @@ public class UserService {
     }
 
     public UserDTO save(UserDTO userDTO) {
+        userDTO.setKey(UUID.randomUUID().toString());
+
         userDTO.setRegistration_data(LocalDateTime.now());
+
         User user = userRepository.save(User.convert(userDTO));
         return UserDTO.convert(user);
     }
@@ -51,10 +53,10 @@ public class UserService {
         return UserDTO.convert(user);
     }
 
-    public UserDTO findByCpf(String cpf) {
-        User user = userRepository.findByCpf(cpf);
+    public UserDTO findByCpfAndKey(String cpf, String key) {
+        User user = userRepository.findByCpf(cpf, key);
         if (user != null) return UserDTO.convert(user);
-        return null;
+        throw new UserNotFoundException();
     }
 
     public List<UserDTO> queryByName(String name) {
@@ -64,18 +66,18 @@ public class UserService {
                 .map(UserDTO::convert)
                 .collect(Collectors.toList());
     }
-    // email, phone_number and address
+
     public UserDTO editUser(Long userId, UserDTO userDTO) {
         User user = userRepository
                 .findById(userId)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
 
         if (userDTO.getEmail() != null && !user.getEmail().equals(userDTO.getEmail())) user.setEmail(userDTO.getEmail());
         if (userDTO.getPhone_number() != null && !user.getPhone_number().equals(userDTO.getPhone_number())) user.setPhone_number(userDTO.getPhone_number());
         if (userDTO.getAddress() != null && !user.getAddress().equals(userDTO.getAddress())) user.setAddress(userDTO.getAddress());
 
         user = userRepository.save(user);
-        return userDTO.convert(user);
+        return UserDTO.convert(user);
     }
 
     public Page<UserDTO> getAllPage(Pageable page) {

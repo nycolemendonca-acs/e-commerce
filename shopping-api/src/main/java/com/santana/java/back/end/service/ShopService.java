@@ -1,5 +1,6 @@
 package com.santana.java.back.end.service;
 
+import com.santana.java.back.end.converter.DTOConverter;
 import com.santana.java.back.end.dto.ItemDTO;
 import com.santana.java.back.end.dto.ProductDTO;
 import com.santana.java.back.end.dto.ShopDTO;
@@ -21,14 +22,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ShopService {
     @Autowired
-    private final ShopRepository shopRepository;
+    private ShopRepository shopRepository;
     @Autowired
-    private final ProductService productService;
+    private ProductService productService;
     @Autowired
-    private final UserService userService;
+    private UserService userService;
 
     public List<ShopDTO> getAll() {
         List<Shop> shops = shopRepository.findAll();
+
         return shops
                 .stream()
                 .map(ShopDTO::convert)
@@ -46,7 +48,8 @@ public class ShopService {
 
     public List<ShopDTO> getByDate(ShopDTO shopDTO) {
         List<Shop> shops = shopRepository
-                .findAllByDateGreatherTran(shopDTO.getDate());
+                .findAllByDateGreaterTran(shopDTO.getDate());
+
         return shops
                 .stream()
                 .map(ShopDTO::convert)
@@ -60,10 +63,7 @@ public class ShopService {
         return null;
     }
 
-    public ShopDTO save(ShopDTO shopDTO, String key) {
-        if (userService.getUserByCpf(shopDTO.getUserIdentifier()) == null) { return null; }
-        if (!validateProducts(shopDTO.getItems())) { return null; }
-
+    public ShopDTO save(ShopDTO shopDTO) {
         shopDTO.setTotal(shopDTO.getItems()
                 .stream()
                 .map(x -> x.getPrice())
@@ -86,7 +86,10 @@ public class ShopService {
         return true;
     }
 
-    public List<ShopDTO> getShopsByFilter(LocalDate startDate, LocalDate endDate, Float minimumValue) {
+    public List<ShopDTO> getShopsByFilter(
+            LocalDate startDate,
+            LocalDate endDate,
+            Float minimumValue) {
         List<Shop> shops = shopRepository.getShopByFilters(startDate, endDate, minimumValue);
 
         return shops
@@ -95,8 +98,36 @@ public class ShopService {
                 .collect(Collectors.toList());
     }
 
-
     public ShopReportDTO getReportByDate(LocalDate startDate, LocalDate endDate) {
         return shopRepository.getReportByDate(startDate, endDate);
+    }
+
+    public ShopDTO save(ShopDTO shopDTO) {
+        if (userService.getUserByCpf(shopDTO.getUserIdentifier()) == null) return  null;
+        if (!validateProducts(shopDTO.getItems())) return  null;
+
+        shopDTO.setTotal(shopDTO
+                .getItems()
+                .stream()
+                .map(x -> x.getPrice())
+                .reduce((float) 0, Float::sum));
+
+        Shop shop = Shop.convert(shopDTO);
+        shop.setDate(LocalDateTime.now());
+
+        shop = shopRepository.save(shop);
+        return DTOConverter.convert(shop);
+    }
+
+    private boolean validateProducts(List<ItemDTO> items) {
+        for (ItemDTO item : items) {
+            ProductDTO productDTO = productService.getProductByIdentifier(item.getProductIdentifier());
+
+            if (productDTO == null) return false;
+
+            item.setPrice(productDTO.getPrice());
+        }
+
+        return true;
     }
 }

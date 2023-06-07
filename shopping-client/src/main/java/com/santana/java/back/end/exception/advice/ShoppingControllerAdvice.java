@@ -18,7 +18,7 @@ public class ShoppingControllerAdvice {
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(UserNotFoundException.class)
-    public ErrorDTO handleUserNotFound(ProductNotFoundException) {
+    public static ErrorDTO handleUserNotFound(ProductNotFoundException) {
         ErrorDTO errorDTO = new ErrorDTO();
         errorDTO.setStatus(HttpStatus.NOT_FOUND.value());
         errorDTO.setMessage("Product not found.");
@@ -29,7 +29,7 @@ public class ShoppingControllerAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(UserNotFoundException.class)
 
-    public ErrorDTO handleUserNotFound(UserNotFoundException userNotFoundException) {
+    public static ErrorDTO handleUserNotFound(UserNotFoundException userNotFoundException) {
         ErrorDTO errorDTO = new ErrorDTO();
         errorDTO.setStatus(HttpStatus.NOT_FOUND.value());
         errorDTO.setMessage("User not found.");

@@ -23,7 +23,7 @@ public class Product {
     private String name;
     private Float price;
     private String description;
-    private String productIdentifier;
+    private String product_identifier;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -35,9 +35,9 @@ public class Product {
         product.setName(productDTO.getName());
         product.setPrice(productDTO.getPrice());
         product.setDescription(productDTO.getDescription());
-        product.setProductIdentifier(productDTO.getProductIdentifier());
+        product.setProduct_identifier(productDTO.getProductIdentifier());
 
-        if (productDTO.getCategory() != null) product.setCategory(Category.convert(productDTO.getCategory()));
+        product.setCategory(Category.convert(productDTO.getCategory()));
 
         return product;
     }

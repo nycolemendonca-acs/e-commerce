@@ -55,50 +55,54 @@ public class UserController {
 
     private final UserService userService;
 
-    // Returns all users
     @GetMapping
-    public List<UserDTO> getUsers() { return userService.getAll(); }
-
-    // Returns a user based on ID
-    @GetMapping("/{id}")
-    public UserDTO findById(@PathVariable Long id) { return userService.findById(id); }
-
-    // Returns a user based on CPF
-    @GetMapping("/{cpf}/cpf")
-    public UserDTO findByCpf(@PathVariable String cpf) {
-        return userService.findByCpf(cpf); // (cpf, key) -> key (error)
+    public List<UserDTO> getUsers() {
+        return userService.getAll();
     }
 
-    // Add user
+    @GetMapping("/{id}")
+    public UserDTO findById(@PathVariable Long id) {
+        return userService.findById(id);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO newUser(@RequestBody @Valid UserDTO userDTO) {
         return userService.save(userDTO);
     }
 
-    // Delete user
+    @GetMapping("/{cpf}/cpf")
+    public UserDTO findByCpf(@PathVariable String cpf) {
+        return userService.findByCpfAndKey(cpf, key);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) throws UserPrincipalNotFoundException {
         userService.delete(id);
     }
 
-    // Search a user
     @GetMapping("/search")
     public List<UserDTO> queryByName(
             @RequestParam(name = "name", required = true) String name) {
                 return userService.queryByName(name);
     }
 
-    // Edit user
     @PatchMapping("/{id}")
     public UserDTO editUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
         return userService.editUser(id, userDTO);
     }
 
-    // Pageable
     @GetMapping("/pageable")
     public Page<UserDTO> getUsersPage(Pageable pageable) {
         return userService.getAllPage(pageable);
     }
+
+    @GetMapping("/user/{cpf}/cpf")
+    UserDTO findByCpf(
+            @RequestParam(name = "key", required = true) String key,
+            @PathVariable String cpf {
+                return userService.findByCpf(cpf, key);
+    }
+    )
 }

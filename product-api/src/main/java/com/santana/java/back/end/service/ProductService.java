@@ -19,44 +19,44 @@ import java.util.stream.Collectors;
 
 public class ProductService {
     private ProductRepository productRepository;
-    private CategoryRepository categoryRepository;
+    // private CategoryRepository categoryRepository;
 
 
-    // Returns all registered products
     public List<ProductDTO> getAll() {
         List<Product> products = productRepository.findAll();
+
         return products
                 .stream()
                 .map(ProductDTO::convert)
                 .collect(Collectors.toList());
     }
 
-    // Returns all products from a given category
     public List<ProductDTO> getProductByCategoryId(Long categoryId) {
         List<Product> products = productRepository.getProductByCategory(categoryId);
+
         return products
                 .stream()
                 .map(ProductDTO::convert)
                 .collect(Collectors.toList());
     }
 
-    // Returns a product for the selected id
     public ProductDTO findByProductIdentifier(String productIdentifier) {
         Product product = productRepository.findByProductIdentifier(productIdentifier);
+
         if (product != null) return ProductDTO.convert(product);
+
         return null;
     }
 
     public ProductDTO save(ProductDTO productDTO) {
-        Boolean existsCategory = categoryRepository.existsById(productDTO.getCategory().getId());
-        if (!existsCategory) throw new CategoryNotFoundException();
-
         Product product = productRepository.save(Product.convert(productDTO));
+
         return ProductDTO.convert(product);
     }
 
     public void delete(long productId) {
         Optional<Product> product = productRepository.findById(productId);
+
         if (product.isPresent()) productRepository.delete(product.get());
     }
 
@@ -73,6 +73,7 @@ public class ProductService {
 
     public Page<ProductDTO> getAllPage(Pageable page) {
         Page<Product> users = productRepository.findAll(page);
+
         return users.map(ProductDTO::convert);
     }
 }

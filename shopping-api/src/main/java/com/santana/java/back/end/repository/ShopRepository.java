@@ -12,7 +12,7 @@ public interface ShopRepository extends JpaRepository<Shop, Long>, ReportReposit
     // Retrieves all purchases for a specific user
     List<Shop> findAllByUserIdentifier(String userIdentifier);
     // Fetches all purchases that have a total value greater than specified
-    List<Shop> findAllByTotalGreatherThan(Float total);
+    List<Shop> findAllByTotalGreaterThan(Float total);
     // Returns all purchases from a specific date
-    List<Shop> findAllByDateGreatherTran(LocalDateTime date);
+    List<Shop> findAllByDateGreaterTran(LocalDateTime date);
 }

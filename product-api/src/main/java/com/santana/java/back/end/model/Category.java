@@ -30,6 +30,7 @@ public class Category {
 
         category.setId(categoryDTO.getId());
         category.setName(categoryDTO.getName());
+
         return category;
     }
 }

@@ -1,7 +1,6 @@
 package com.santana.java.back.end.model;
 
 import com.santana.java.back.end.dto.ItemDTO;
-import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +17,10 @@ public class Item {
 
     public static Item convert(ItemDTO itemDTO) {
         Item item = new Item();
+
         item.setProductIdentifier(itemDTO.getProductIdentifier());
         item.setPrice(itemDTO.getPrice());
+
         return item;
     }
 }

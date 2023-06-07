@@ -7,5 +7,5 @@ create table users.user (
     address varchar(100) not null,
     email varchar(100) not null,
     phone_number varchar(100) not null,
-    registration_data timestamp not null
+    registration_date timestamp not null
 );

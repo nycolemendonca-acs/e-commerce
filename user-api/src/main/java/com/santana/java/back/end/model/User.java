@@ -28,7 +28,7 @@ public class User {
     private String key;
     private String email;
     private String phone_number;
-    private LocalDateTime registration_data;
+    private LocalDateTime registration_date;
 
     // Converting instances User class -> UserDTO class
     public static User convert(UserDTO userDTO) {
@@ -39,7 +39,7 @@ public class User {
         user.setKey(userDTO.getKey());
         user.setEmail(userDTO.getEmail());
         user.setPhone_number(userDTO.getPhone_number());
-        user.setRegistration_data(userDTO.getRegistration_data());
+        user.setRegistration_date(userDTO.getRegistration_data());
         return user;
     }
 }

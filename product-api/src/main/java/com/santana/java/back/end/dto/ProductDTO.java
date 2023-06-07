@@ -17,7 +17,7 @@ import lombok.Setter;
 
 public class ProductDTO {
     @NotBlank
-    private String productIdentifier;
+    private String product_identifier;
     @NotBlank
     private String name;
     @NotBlank
@@ -32,10 +32,12 @@ public class ProductDTO {
 
         productDTO.setName(product.getName());
         productDTO.setPrice(product.getPrice());
-        productDTO.setProductIdentifier(product.getProductIdentifier());
+        productDTO.setProduct_identifier(product.getProduct_identifier());
         productDTO.setDescription(product.getDescription());
 
-        if (product.getCategory() != null) productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
+        if (product.getCategory() != null) {
+            productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
+        }
 
         return productDTO;
     }

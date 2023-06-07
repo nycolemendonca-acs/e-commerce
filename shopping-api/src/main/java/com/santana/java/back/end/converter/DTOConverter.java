@@ -1,9 +1,11 @@
-package com.santana.java.back.end.dto;
+package com.santana.java.back.end.converter;
 
+import com.santana.java.back.end.dto.ItemDTO;
+import com.santana.java.back.end.dto.ShopDTO;
 import com.santana.java.back.end.model.Item;
 import com.santana.java.back.end.model.Shop;
 
-public class ConvertDTO {
+public class DTOConverter {
     public static ItemDTO convert(Item item) {
         ItemDTO itemDTO = new ItemDTO();
 

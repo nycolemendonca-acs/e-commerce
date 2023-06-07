@@ -29,7 +29,7 @@ public class UserDTO {
         userDTO.setCpf(user.getCpf());
         userDTO.setEmail(user.getEmail());
         userDTO.setPhone_number(user.getPhone_number());
-        userDTO.setRegistration_data(user.getRegistration_data());
+        userDTO.setRegistration_data(user.getRegistration_date());
         return userDTO;
     }
 }
