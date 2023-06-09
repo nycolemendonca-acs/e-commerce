@@ -5,39 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f55056d-37e2-47c4-86c0-518b712fa017" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/exception/advice/UserControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_key_column_user.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/controller/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/e-commerce.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/dto/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/java/com/santana/java/back/end/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product-api/src/main/resources/db/migration/v2__create_product_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../product-api/src/main/resources/db/migration/v2__create_product_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/dto/CategoryDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/dto/ProductDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/model/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/repository/CategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/repository/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/com/santana/java/back/end/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/db/migration/v1__create_category_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/db/migration/v2__create_product_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-api/target/classes/db/migration/v3__insert_categories.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shopping-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/dto/ConvertDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/model/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/repository/ReportRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/repository/ReportRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/repository/ReportRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/repository/ShopRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-api/target/classes/db/migration/v1__create_shopping_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/exception/advice/ShoppingControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-client/src/main/java/com/santana/java/back/end/exception/advice/ShoppingControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shopping-api/src/main/java/com/santana/java/back/end/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/dto/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/santana/java/back/end/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/v1__create_user_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/v1__create_user_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/v2__Add_key_column_user.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +71,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Dev2/Documents/e-commerce/shopping-api"
+    "last_opened_file_path": "C:/Users/Dev2/Documents/e-commerce-nycole/shopping-api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "5f03e2dc5ecb6e6560b0ea9c61093695",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -82,7 +95,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686070717028</updated>
+      <workItem from="1686327665765" duration="335000" />
+      <workItem from="1686329718174" duration="99000" />
+      <workItem from="1686330032722" duration="2180000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

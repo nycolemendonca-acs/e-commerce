@@ -2,6 +2,8 @@ package com.santana.java.back.end.repository;
 
 import com.santana.java.back.end.dto.ShopReportDTO;
 import com.santana.java.back.end.model.Shop;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import javax.management.Query;
 import java.math.BigInteger;

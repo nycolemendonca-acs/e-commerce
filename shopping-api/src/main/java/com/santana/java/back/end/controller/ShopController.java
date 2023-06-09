@@ -3,10 +3,11 @@ package com.santana.java.back.end.controller;
 import com.santana.java.back.end.dto.ShopDTO;
 import com.santana.java.back.end.dto.ShopReportDTO;
 import com.santana.java.back.end.service.ShopService;
-
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.time.LocalDate;
 import java.util.List;

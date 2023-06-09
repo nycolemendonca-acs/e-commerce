@@ -7,17 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product-api" />
-        <module name="user-api" />
-        <module name="shopping-api" />
-        <module name="shopping-client" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="shopping-api" options="-parameters" />
-      <module name="shopping-client" options="-parameters" />
-      <module name="user-api" options="" />
-    </option>
   </component>
 </project>
